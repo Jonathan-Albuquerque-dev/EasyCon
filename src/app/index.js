@@ -1,36 +1,33 @@
 import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import Input from "../components/input/Input";
 import Button from "../components/button/Button.js";
+import { style } from "./style.js";
+import Logo from "../assets/logo.png";
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.containerInput}>
-        <Text style={styles.txt}>Email:</Text>
-        <Input />
-        <Text style={styles.txt}>Senha:</Text>
-        <Input />
+    <View style={style.container}>
+      <View style={style.containerLogo}>
+        <Image source={require("../assets/logo.png")} />
       </View>
-      <View style={{ alignItems: "center" }}>
-        <Button text="Acessar" />
+      <View>
+        <View style={style.containerInput}>
+          <Text style={style.txt}>Email:</Text>
+          <Input keyboardType={"email-address"} />
+          <Text style={style.txt}>Senha:</Text>
+          <Input secureTextEntry="true" keyboardType={"numeric"} />
+        </View>
+        <View style={{ alignItems: "center" }}>
+          <Button text="Acessar" />
+        </View>
+      </View>
+      <View style={style.containerCriarConta}>
+        <Text>Não possui uma conta?</Text>
+        <Link style={{ color: "#0097B2" }} href={"cadastro"}>
+          Criar uma conta
+        </Link>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    gap: 10,
-  },
-  containerInput: {
-    alignItems: "center",
-  },
-  txt: {
-    textAlign: "leaft",
-    width: "80%",
-    marginBottom: 8,
-    color: "#23C0DB",
-  },
-});

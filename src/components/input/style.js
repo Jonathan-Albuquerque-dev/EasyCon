@@ -9,5 +9,6 @@ export const style = StyleSheet.create({
     height: 43,
     borderRadius: 5,
     marginBottom: 10,
+    padding: 10,
   },
 });
