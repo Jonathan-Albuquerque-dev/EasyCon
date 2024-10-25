@@ -5,7 +5,7 @@ import Button from "../components/button/Button.js";
 import { style } from "./style.js";
 import Logo from "../assets/logo.png";
 
-export default function App() {
+export default function Login() {
   return (
     <View style={style.container}>
       <View style={style.containerLogo}>

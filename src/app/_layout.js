@@ -7,9 +7,16 @@ export default function Layout() {
         name="index"
         options={{
           headerShown: false,
+          headerTitle: "Login",
         }}
       />
-      <Stack.Screen name="cadastro" />
+      <Stack.Screen
+        name="cadastro"
+        options={{
+          headerTitle: "EasyCon",
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
