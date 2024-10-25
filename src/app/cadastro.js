@@ -33,7 +33,7 @@ export default function Cadastro() {
       </View>
       <View style={styles.containerInput}>
         <Text style={styles.txt}>Telefone:</Text>
-        <Input />
+        <Input keyboardType={"numeric"} />
       </View>
       <View style={{ alignItems: "center" }}>
         <View style={styles.containerBlocoAp}>
