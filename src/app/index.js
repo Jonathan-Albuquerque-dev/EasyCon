@@ -1,4 +1,4 @@
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { StyleSheet, Text, View, Image } from "react-native";
 import Input from "../components/input/Input";
 import Button from "../components/button/Button.js";
@@ -19,7 +19,12 @@ export default function Login() {
           <Input secureTextEntry="true" keyboardType={"numeric"} />
         </View>
         <View style={{ alignItems: "center" }}>
-          <Button text="Acessar" />
+          <Button
+            text="Acessar"
+            onPress={() => {
+              router.replace("./(Auth)/Home");
+            }}
+          />
         </View>
       </View>
       <View style={style.containerCriarConta}>
