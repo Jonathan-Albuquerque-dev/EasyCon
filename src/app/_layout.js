@@ -23,6 +23,14 @@ export default function Layout() {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="details/infoMoradores/[index]"
+        options={{
+          headerShown: true,
+          headerTitle: "Morador",
+          headerBackTitle: "Voltar",
+        }}
+      />
     </Stack>
   );
 }

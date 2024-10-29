@@ -5,12 +5,19 @@ import {
   Image,
   StyleSheet,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 import { Residentes } from "../../../database/moradores.js";
+import { router } from "expo-router";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 export default function Moradores() {
   return (
     <View>
+      <View>
+        <TextInput style={style.input} />
+        <FontAwesome name="search" style={style.icon} />
+      </View>
       <FlatList
         data={Residentes}
         keyExtractor={(item) => item.id}
@@ -22,7 +29,14 @@ export default function Moradores() {
 
 function MoradoresList({ itens }) {
   return (
-    <TouchableOpacity style={style.container}>
+    <TouchableOpacity
+      style={style.container}
+      onPress={() =>
+        router.navigate(`details/infoMoradores/${itens.id}`, {
+          name: itens.id,
+        })
+      }
+    >
       <Image source={require("../../../assets/person.png")} style={style.img} />
       <View style={style.containerNome}>
         <Text>{itens.nome}</Text>
@@ -58,5 +72,23 @@ const style = StyleSheet.create({
   img: {
     width: 50,
     height: 50,
+  },
+  input: {
+    height: 50,
+    padding: 10,
+    marginHorizontal: 10,
+    marginBottom: 13,
+    marginTop: 15,
+    borderRadius: 5,
+    backgroundColor: "#DEDEDE",
+    borderWidth: 1,
+    borderColor: "#CFD0D0",
+  },
+  icon: {
+    fontSize: 28,
+    position: "absolute",
+    right: 20,
+    top: 25,
+    color: "#548892",
   },
 });
