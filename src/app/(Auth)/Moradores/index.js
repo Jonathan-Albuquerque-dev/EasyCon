@@ -10,16 +10,37 @@ import {
 import { Residentes } from "../../../database/moradores.js";
 import { router } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { useState, useEffect } from "react";
 
 export default function Moradores() {
+  const [search, setSearch] = useState("");
+  const [morador, setMorador] = useState(Residentes);
+
+  useEffect(() => {
+    if (search === "") {
+      setMorador(Residentes);
+    } else {
+      setMorador(
+        Residentes.filter((item) => {
+          return item.nome.indexOf(search.toLowerCase()) != -1;
+        })
+      );
+    }
+  }, [search]);
+
   return (
     <View>
       <View>
-        <TextInput style={style.input} />
+        <TextInput
+          style={style.input}
+          value={search}
+          onChangeText={(v) => setSearch(v)}
+          autoCapitalize="none"
+        />
         <FontAwesome name="search" style={style.icon} />
       </View>
       <FlatList
-        data={Residentes}
+        data={morador}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <MoradoresList itens={item} />}
       />
@@ -74,7 +95,7 @@ const style = StyleSheet.create({
     height: 50,
   },
   input: {
-    height: 50,
+    height: 45,
     padding: 10,
     marginHorizontal: 10,
     marginBottom: 13,
@@ -88,7 +109,7 @@ const style = StyleSheet.create({
     fontSize: 28,
     position: "absolute",
     right: 20,
-    top: 25,
+    top: 21,
     color: "#548892",
   },
 });

@@ -1,7 +1,7 @@
 export const Residentes = [
   {
     id: 1,
-    nome: "Jonathan",
+    nome: "jonathan",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -10,7 +10,7 @@ export const Residentes = [
   },
   {
     id: 2,
-    nome: "Jonathan",
+    nome: "maria",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -19,7 +19,7 @@ export const Residentes = [
   },
   {
     id: 3,
-    nome: "Jonathan",
+    nome: "jose",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -28,7 +28,7 @@ export const Residentes = [
   },
   {
     id: 4,
-    nome: "Jonathan",
+    nome: "pedro",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -37,7 +37,7 @@ export const Residentes = [
   },
   {
     id: 5,
-    nome: "Jonathan",
+    nome: "carol",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -46,7 +46,7 @@ export const Residentes = [
   },
   {
     id: 6,
-    nome: "Jonathan",
+    nome: "isabel",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -55,7 +55,7 @@ export const Residentes = [
   },
   {
     id: 7,
-    nome: "Jonathan",
+    nome: "joana",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -64,7 +64,7 @@ export const Residentes = [
   },
   {
     id: 8,
-    nome: "Jonathan",
+    nome: "joaquim",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
@@ -73,7 +73,7 @@ export const Residentes = [
   },
   {
     id: 9,
-    nome: "Jonathan",
+    nome: "raimunda",
     email: "jonathan@gmail.com",
     telefone: "85991204971",
     senha: "123",
