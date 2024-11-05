@@ -7,6 +7,8 @@ export default function Input(props) {
       style={style.input}
       secureTextEntry={props.secureTextEntry}
       keyboardType={props.keyboardType}
+      value={props.value}
+      onChangeText={(item) => props.onChangeText(item)}
     />
   );
 }

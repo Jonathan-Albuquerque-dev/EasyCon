@@ -1,11 +1,17 @@
 import { Link, router } from "expo-router";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TextInput, Alert } from "react-native";
 import Input from "../components/input/Input";
 import Button from "../components/button/Button.js";
 import { style } from "./style.js";
-import Logo from "../assets/logo.png";
+import { useContext, useState } from "react";
+import { AuthContext } from "../context/auth.js";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { signIn } = useContext(AuthContext);
+
   return (
     <View style={style.container}>
       <View style={style.containerLogo}>
@@ -14,17 +20,21 @@ export default function Login() {
       <View>
         <View style={style.containerInput}>
           <Text style={style.txt}>Email:</Text>
-          <Input keyboardType={"email-address"} />
+          <Input
+            keyboardType={"email-address"}
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+          />
           <Text style={style.txt}>Senha:</Text>
-          <Input secureTextEntry="true" keyboardType={"numeric"} />
+          <Input
+            secureTextEntry="true"
+            keyboardType={"numeric"}
+            value={password}
+            onChangeText={(item) => setPassword(item)}
+          />
         </View>
         <View style={{ alignItems: "center" }}>
-          <Button
-            text="Acessar"
-            onPress={() => {
-              router.replace("./(Auth)/Home");
-            }}
-          />
+          <Button text="Acessar" onPress={() => signIn(email, password)} />
         </View>
       </View>
       <View style={style.containerCriarConta}>

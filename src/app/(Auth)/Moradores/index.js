@@ -52,11 +52,7 @@ function MoradoresList({ itens }) {
   return (
     <TouchableOpacity
       style={style.container}
-      onPress={() =>
-        router.navigate(`details/infoMoradores/${itens.id}`, {
-          name: itens.id,
-        })
-      }
+      onPress={() => router.navigate(`details/infoMoradores/${itens.id}`)}
     >
       <Image source={require("../../../assets/person.png")} style={style.img} />
       <View style={style.containerNome}>

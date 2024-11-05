@@ -40,6 +40,16 @@ export default function Layout() {
           tabBarLabel: "Financeiro",
         }}
       />
+      <Tabs.Screen
+        name="Perfil/index"
+        options={{
+          headerTitle: "EasyCon",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={30} name="user" color={color} />
+          ),
+          tabBarLabel: "Perfil",
+        }}
+      />
     </Tabs>
   );
 }
